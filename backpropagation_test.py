@@ -111,3 +111,9 @@ def test_backpropatation():
     print("diff_sigmoid_z22: {}".format(diff_sigmoid_z22))
     print("diff_sigmoid_z23: {}".format(diff_sigmoid_z23))
 
+    diff_sigmoid_z31 = a31 * (1 - a31)
+    diff_sigmoid_z32 = a32 * (1 - a32)
+
+    print("diff_sigmoid_z31: {}".format(diff_sigmoid_z31))
+    print("diff_sigmoid_z32: {}".format(diff_sigmoid_z32))
+
