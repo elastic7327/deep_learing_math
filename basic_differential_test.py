@@ -9,7 +9,8 @@ def sigmoid(x):
   return 1 / (1 + math.exp(-x))
 
 def test_description():
-    # 은닉층 1
+    # 은닉층
+    # 오차역전파법
     w1 = np.array([[3.214, -4.562, -0.541, -2.359, -1.071, -2.808, -1.382, 3.991, -2.218, 5.730, 5.310, -2.286]], dtype=float)
 
     # 학습데이터
@@ -154,6 +155,6 @@ def test_simple_basic_test():
     t11 = 1
     t12 = 0
 
-    c1 = 0.5 * (pow(t11 - a31, 2) + pow(t12 - a32, 2))
+    c2 = 0.5 * (pow(t11 - a31, 2) + pow(t12 - a32, 2))
     # c1 ~ 0.046xxxx값이 나와야한다.
-    pass
+    print("c2: {}".format(c2))
