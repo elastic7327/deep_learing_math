@@ -10,6 +10,7 @@ import math
 def sigmoid(x):
   return 1 / (1 + math.exp(-x))
 
+
 def test_backpropatation():
 
     # n = 학습률
@@ -117,3 +118,36 @@ def test_backpropatation():
     print("diff_sigmoid_z31: {}".format(diff_sigmoid_z31))
     print("diff_sigmoid_z32: {}".format(diff_sigmoid_z32))
 
+
+    print(" aC/aa31: {}".format(a31 - t11))
+    print(" aC/aa32: {}".format(a32 - t12))
+
+    """
+    유닛의 오차 o32 = (a32 - t12) * sigmoid(z32){1 - sigmoid(z32)}
+    """
+
+    o32 = (a32 - t12) * sigmoid(z32) * (1 - sigmoid(z32))
+    o31 = (a31 - t11) * sigmoid(z31) * (1 - sigmoid(z31))
+
+    print("o32 :{}".format(o32))
+    print("o31 :{}".format(o31))
+
+    o22 = (a22 - t12) * sigmoid(z22) * (1 - sigmoid(z22))
+    o21 = (a21 - t11) * sigmoid(z21) * (1 - sigmoid(z21))
+
+    print("o22 :{}".format(o22))
+    print("o21 :{}".format(o21))
+
+    # ac_aw = o21 * x[0]
+    print(o21 * a21)
+    #  (o31 * w3[0] + o32 * w3[0]) * sigmoid(z21) * (1 - sigmoid(z21))
+
+    q21 = (o31 * w3[0] + o32 * w3[1]) * (sigmoid(z21) * (1 - sigmoid(z21)))
+    q22 = (o31 * w3[0] + o32 * w3[1]) * (sigmoid(z22) * (1 - sigmoid(z22)))
+    q23 = (o31 * w3[0] + o32 * w3[1]) * (sigmoid(z23) * (1 - sigmoid(z23)))
+
+    print("q21 :{}".format(q21))
+    print("q22 :{}".format(q22))
+    print("q23 :{}".format(q23))
+
+    __import__('ipdb').set_trace()
