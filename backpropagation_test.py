@@ -85,7 +85,29 @@ def test_backpropatation():
     c1 = 0.5 * (pow(t11 - a31, 2) + pow(t12 - a32, 2))
     print("c1: {}".format(c1))
     # c1 ~ 0.046xxxx값이 나와야한다.
+    """
+    ps -> 다음번에는 정확하게 표기특수문자를 가져와서 README.md쪽에 넣어야겠다..
+    a'(z?) = sigmoid'(z?) = sigmoid(z?){1 - sigmoid(z)}
 
+    ipdb> a21
+    0.004206118663191185
+    ipdb> a21 *( 1 - a21 )
+    0.00418842722898234
+    ipdb> a22 *( 1 - a22 )
+    0.10515358808118382
+    ipdb> a23 *( 1 - a23 )
+    """
 
+    # c 는 제곱의 오차이고 a'(z?)라고 표기를 한것은.. 활성화 함수를 미분한 값입니다..
 
+    #  TODO:  <11-06-18, Me> # 각종 특수문자 표기법 가져오기
+    diff_sigmoid_z21 = a21 * (1 - a21)  # 활성화 함수이므로 activate func..? 이런식으로 변수 이름을 바꿔주면 좋을 것 같다.
+
+    diff_sigmoid_z22 = a22 * (1 - a22)
+
+    diff_sigmoid_z23 = a23 * (1 - a23)
+
+    print("diff_sigmoid_z21: {}".format(diff_sigmoid_z21))
+    print("diff_sigmoid_z22: {}".format(diff_sigmoid_z22))
+    print("diff_sigmoid_z23: {}".format(diff_sigmoid_z23))
 

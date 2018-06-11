@@ -1,3 +1,8 @@
 [
-  "backpropagation_test.py::test_backpropatation"
+  "backpropagation_test.py::test_backpropatation",
+  "basic_differential_test.py::test_description",
+  "basic_differential_test.py::test_simple_basic_test",
+  "basic_vector_test.py::test_basic_vector",
+  "gradiant_math_test.py::TestClass::test_gradiant_math",
+  "gradiant_math_test.py::TestClass::test_name"
 ]
