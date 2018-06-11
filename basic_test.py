@@ -79,6 +79,7 @@ def test_description():
     t12 = 0
 
     c1 = 0.5 * (pow(t11 - a31, 2) + pow(t12 - a32, 2))
+    print("c1: {}".format(c1))
     # c1 ~ 0.046xxxx값이 나와야한다.
 
 
@@ -155,7 +156,4 @@ def test_simple_basic_test():
 
     c1 = 0.5 * (pow(t11 - a31, 2) + pow(t12 - a32, 2))
     # c1 ~ 0.046xxxx값이 나와야한다.
-
-
-
     pass
